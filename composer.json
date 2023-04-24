@@ -1,0 +1,24 @@
+{
+    "name": "laudeco/mindee",
+    "description": "Mindee SDK client in PHP",
+    "type": "library",
+    "require": {
+        "php": "^8.2",
+        "guzzlehttp/guzzle": "^7.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Laudeco\\Mindee\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Laurent De Coninck",
+            "email": "lau.deconinck@gmail.com"
+        }
+    ]
+}
