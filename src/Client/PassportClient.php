@@ -1,6 +1,6 @@
 <?php
 
-namespace Laudeco\Mindee;
+namespace Laudeco\Mindee\Client;
 
 final class PassportClient extends AbstractMindeeClient
 {
