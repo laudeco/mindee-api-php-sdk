@@ -12,21 +12,6 @@ use Laudeco\Mindee\Domain\Authentication\AuthenticationInterface;
 final class MindeeClientFactory
 {
 
-    public static function invoice(AuthenticationInterface $authentication): MindeeClientInterface
-    {
-        return new InvoiceClient($authentication);
-    }
-
-    public static function receipt(AuthenticationInterface $authentication): MindeeClientInterface
-    {
-        return new ReceiptClient($authentication);
-    }
-
-    public static function passport(AuthenticationInterface $authentication): MindeeClientInterface
-    {
-        return new PassportClient($authentication);
-    }
-
     public static function financialDocument(AuthenticationInterface $authentication): MindeeClientInterface
     {
         return new FinancialDocumentClient($authentication);

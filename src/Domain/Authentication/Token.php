@@ -11,4 +11,10 @@ final class Token implements AuthenticationInterface
     {
     }
 
+    public function token(): ?string
+    {
+        return $this->token;
+    }
+
+
 }

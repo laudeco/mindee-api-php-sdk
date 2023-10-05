@@ -9,4 +9,6 @@ final class Document
     private int $nPages;
     private string $name;
 
+    private Inference $inference;
+
 }

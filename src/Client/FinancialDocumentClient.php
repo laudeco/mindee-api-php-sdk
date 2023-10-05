@@ -8,4 +8,8 @@ use Laudeco\Mindee\Domain\Response\PredictResponse;
 final class FinancialDocumentClient extends AbstractMindeeClient
 {
 
+    protected function version(): string
+    {
+        return 'v1';
+    }
 }
