@@ -52,8 +52,10 @@ try {
     
     $client = MindeeClientFactory::financialDocument(new Token($token));
     $result = $client->parse($document);
-
-    print_r($result);
+    
+    echo $result->customerName()."\n";
+    echo $result->customerAddress()."\n";
+    
 } catch (Exception $e) {
     echo 'Exception :', $e->getMessage(), PHP_EOL;
 }
