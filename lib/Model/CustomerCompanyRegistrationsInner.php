@@ -28,8 +28,8 @@
 
 namespace OpenAPI\Client\Model;
 
-use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use ArrayAccess;
+use OpenAPI\Client\ObjectSerializer;
 
 /**
  * CustomerCompanyRegistrationsInner Class Doc Comment
@@ -86,10 +86,10 @@ class CustomerCompanyRegistrationsInner implements ModelInterface, ArrayAccess, 
       */
     protected static array $openAPINullables = [
         'confidence' => false,
-		'page_id' => false,
-		'polygon' => false,
-		'type' => false,
-		'value' => false
+        'page_id' => false,
+        'polygon' => false,
+        'type' => false,
+        'value' => false
     ];
 
     /**
@@ -531,7 +531,7 @@ class CustomerCompanyRegistrationsInner implements ModelInterface, ArrayAccess, 
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -557,5 +557,3 @@ class CustomerCompanyRegistrationsInner implements ModelInterface, ArrayAccess, 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

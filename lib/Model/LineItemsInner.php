@@ -28,8 +28,8 @@
 
 namespace OpenAPI\Client\Model;
 
-use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use ArrayAccess;
+use OpenAPI\Client\ObjectSerializer;
 
 /**
  * LineItemsInner Class Doc Comment
@@ -96,15 +96,15 @@ class LineItemsInner implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'confidence' => false,
-		'description' => false,
-		'page_id' => false,
-		'polygon' => false,
-		'product_code' => false,
-		'quantity' => false,
-		'tax_amount' => false,
-		'tax_rate' => false,
-		'total_amount' => false,
-		'unit_price' => false
+        'description' => false,
+        'page_id' => false,
+        'polygon' => false,
+        'product_code' => false,
+        'quantity' => false,
+        'tax_amount' => false,
+        'tax_rate' => false,
+        'total_amount' => false,
+        'unit_price' => false
     ];
 
     /**
@@ -701,7 +701,7 @@ class LineItemsInner implements ModelInterface, ArrayAccess, \JsonSerializable
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -727,5 +727,3 @@ class LineItemsInner implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

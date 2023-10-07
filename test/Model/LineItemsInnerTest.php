@@ -41,7 +41,6 @@ use PHPUnit\Framework\TestCase;
  */
 class LineItemsInnerTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */

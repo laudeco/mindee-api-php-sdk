@@ -28,8 +28,8 @@
 
 namespace OpenAPI\Client\Model;
 
-use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use ArrayAccess;
+use OpenAPI\Client\ObjectSerializer;
 
 /**
  * SuccessPredictResponseDocumentInferenceProduct Class Doc Comment
@@ -82,8 +82,8 @@ class SuccessPredictResponseDocumentInferenceProduct implements ModelInterface, 
       */
     protected static array $openAPINullables = [
         'features' => false,
-		'name' => false,
-		'version' => false
+        'name' => false,
+        'version' => false
     ];
 
     /**
@@ -447,7 +447,7 @@ class SuccessPredictResponseDocumentInferenceProduct implements ModelInterface, 
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -473,5 +473,3 @@ class SuccessPredictResponseDocumentInferenceProduct implements ModelInterface, 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

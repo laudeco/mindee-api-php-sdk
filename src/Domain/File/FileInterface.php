@@ -4,7 +4,6 @@ namespace Laudeco\Mindee\Domain\File;
 
 interface FileInterface
 {
-
-    public function content():string;
+    public function content(): string;
 
 }

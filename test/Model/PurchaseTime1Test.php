@@ -41,7 +41,6 @@ use PHPUnit\Framework\TestCase;
  */
 class PurchaseTime1Test extends TestCase
 {
-
     /**
      * Setup before running any test case
      */

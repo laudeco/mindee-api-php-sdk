@@ -28,8 +28,8 @@
 
 namespace OpenAPI\Client\Model;
 
-use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use ArrayAccess;
+use OpenAPI\Client\ObjectSerializer;
 
 /**
  * ErrorPredictResponseApiRequest Class Doc Comment
@@ -87,10 +87,10 @@ class ErrorPredictResponseApiRequest implements ModelInterface, ArrayAccess, \Js
       */
     protected static array $openAPINullables = [
         'error' => false,
-		'resources' => false,
-		'status' => false,
-		'status_code' => false,
-		'url' => false
+        'resources' => false,
+        'status' => false,
+        'status_code' => false,
+        'url' => false
     ];
 
     /**
@@ -548,7 +548,7 @@ class ErrorPredictResponseApiRequest implements ModelInterface, ArrayAccess, \Js
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -574,5 +574,3 @@ class ErrorPredictResponseApiRequest implements ModelInterface, ArrayAccess, \Js
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

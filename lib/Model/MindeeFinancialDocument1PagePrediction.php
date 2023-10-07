@@ -28,8 +28,8 @@
 
 namespace OpenAPI\Client\Model;
 
-use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use ArrayAccess;
+use OpenAPI\Client\ObjectSerializer;
 
 /**
  * MindeeFinancialDocument1PagePrediction Class Doc Comment
@@ -122,28 +122,28 @@ class MindeeFinancialDocument1PagePrediction implements ModelInterface, ArrayAcc
       */
     protected static array $openAPINullables = [
         'category' => false,
-		'customer_address' => false,
-		'customer_company_registrations' => false,
-		'customer_name' => false,
-		'date' => false,
-		'document_type' => false,
-		'due_date' => false,
-		'invoice_number' => false,
-		'line_items' => false,
-		'locale' => false,
-		'orientation' => false,
-		'reference_numbers' => false,
-		'subcategory' => false,
-		'supplier_address' => false,
-		'supplier_company_registrations' => false,
-		'supplier_name' => false,
-		'supplier_payment_details' => false,
-		'taxes' => false,
-		'time' => false,
-		'tip' => false,
-		'total_amount' => false,
-		'total_net' => false,
-		'total_tax' => false
+        'customer_address' => false,
+        'customer_company_registrations' => false,
+        'customer_name' => false,
+        'date' => false,
+        'document_type' => false,
+        'due_date' => false,
+        'invoice_number' => false,
+        'line_items' => false,
+        'locale' => false,
+        'orientation' => false,
+        'reference_numbers' => false,
+        'subcategory' => false,
+        'supplier_address' => false,
+        'supplier_company_registrations' => false,
+        'supplier_name' => false,
+        'supplier_payment_details' => false,
+        'taxes' => false,
+        'time' => false,
+        'tip' => false,
+        'total_amount' => false,
+        'total_net' => false,
+        'total_tax' => false
     ];
 
     /**
@@ -1127,7 +1127,7 @@ class MindeeFinancialDocument1PagePrediction implements ModelInterface, ArrayAcc
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -1153,5 +1153,3 @@ class MindeeFinancialDocument1PagePrediction implements ModelInterface, ArrayAcc
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

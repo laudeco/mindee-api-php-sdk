@@ -28,8 +28,8 @@
 
 namespace OpenAPI\Client\Model;
 
-use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use ArrayAccess;
+use OpenAPI\Client\ObjectSerializer;
 
 /**
  * SupplierCompanyRegistrationsInner1 Class Doc Comment
@@ -84,9 +84,9 @@ class SupplierCompanyRegistrationsInner1 implements ModelInterface, ArrayAccess,
       */
     protected static array $openAPINullables = [
         'confidence' => false,
-		'polygon' => false,
-		'type' => false,
-		'value' => false
+        'polygon' => false,
+        'type' => false,
+        'value' => false
     ];
 
     /**
@@ -497,7 +497,7 @@ class SupplierCompanyRegistrationsInner1 implements ModelInterface, ArrayAccess,
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -523,5 +523,3 @@ class SupplierCompanyRegistrationsInner1 implements ModelInterface, ArrayAccess,
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

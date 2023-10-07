@@ -27,7 +27,7 @@
 
 namespace OpenAPI\Client;
 
-use \Exception;
+use Exception;
 
 /**
  * ApiException Class Doc Comment

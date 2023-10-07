@@ -8,6 +8,6 @@ use Laudeco\Mindee\Domain\Response\ResponseInterface;
 
 interface MindeeClientInterface
 {
-    public function parse(FileInterface $file):ResponseInterface;
+    public function parse(FileInterface $file): ResponseInterface;
 
 }

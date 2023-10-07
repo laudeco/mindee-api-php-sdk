@@ -25,7 +25,7 @@ try {
     echo "Date due: " . $result->dueDate()?->format('d-m-Y') . "\n";
     echo "Reference: " . $result->reference() . "\n";
     echo "\n---------------------------------------------------------------------- \n";
-    foreach($result->lines()  as $item){
+    foreach($result->lines()  as $item) {
         echo "| {$item->getProductCode()}\t | {$item->getDescription()}\t | {$item->getQuantity()}\t | {$item->getUnitPrice()}\t | {$item->getTaxRate()}\t | {$item->getTaxeAmount()}\t | {$item->getTotalAmount()}\t |\n";
     }
     echo "\n---------------------------------------------------------------------- \n";

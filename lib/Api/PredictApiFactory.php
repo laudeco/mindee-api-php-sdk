@@ -8,7 +8,6 @@ use OpenAPI\Client\Configuration;
 
 final class PredictApiFactory
 {
-
     public static function fromAuthentication(AuthenticationInterface $authentication): PredictApi
     {
         // Configure API key authorization: apiKey

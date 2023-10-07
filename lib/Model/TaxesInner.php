@@ -28,8 +28,8 @@
 
 namespace OpenAPI\Client\Model;
 
-use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use ArrayAccess;
+use OpenAPI\Client\ObjectSerializer;
 
 /**
  * TaxesInner Class Doc Comment
@@ -90,12 +90,12 @@ class TaxesInner implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'base' => false,
-		'code' => false,
-		'confidence' => false,
-		'page_id' => false,
-		'polygon' => false,
-		'rate' => false,
-		'value' => false
+        'code' => false,
+        'confidence' => false,
+        'page_id' => false,
+        'polygon' => false,
+        'rate' => false,
+        'value' => false
     ];
 
     /**
@@ -599,7 +599,7 @@ class TaxesInner implements ModelInterface, ArrayAccess, \JsonSerializable
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -625,5 +625,3 @@ class TaxesInner implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

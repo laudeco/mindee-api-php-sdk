@@ -28,8 +28,8 @@
 
 namespace OpenAPI\Client\Model;
 
-use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use ArrayAccess;
+use OpenAPI\Client\ObjectSerializer;
 
 /**
  * MindeeFinancialDocument1DocPrediction Class Doc Comment
@@ -120,27 +120,27 @@ class MindeeFinancialDocument1DocPrediction implements ModelInterface, ArrayAcce
       */
     protected static array $openAPINullables = [
         'category' => false,
-		'customer_address' => false,
-		'customer_company_registrations' => false,
-		'customer_name' => false,
-		'date' => false,
-		'document_type' => false,
-		'due_date' => false,
-		'invoice_number' => false,
-		'line_items' => false,
-		'locale' => false,
-		'reference_numbers' => false,
-		'subcategory' => false,
-		'supplier_address' => false,
-		'supplier_company_registrations' => false,
-		'supplier_name' => false,
-		'supplier_payment_details' => false,
-		'taxes' => false,
-		'time' => false,
-		'tip' => false,
-		'total_amount' => false,
-		'total_net' => false,
-		'total_tax' => false
+        'customer_address' => false,
+        'customer_company_registrations' => false,
+        'customer_name' => false,
+        'date' => false,
+        'document_type' => false,
+        'due_date' => false,
+        'invoice_number' => false,
+        'line_items' => false,
+        'locale' => false,
+        'reference_numbers' => false,
+        'subcategory' => false,
+        'supplier_address' => false,
+        'supplier_company_registrations' => false,
+        'supplier_name' => false,
+        'supplier_payment_details' => false,
+        'taxes' => false,
+        'time' => false,
+        'tip' => false,
+        'total_amount' => false,
+        'total_net' => false,
+        'total_tax' => false
     ];
 
     /**
@@ -190,9 +190,9 @@ class MindeeFinancialDocument1DocPrediction implements ModelInterface, ArrayAcce
         return $this->openAPINullablesSetToNull;
     }
 
-    public function customerAddress():CustomerAddress
+    public function customerAddress(): CustomerAddress
     {
-        return $this->getCustomerAddress()?: new CustomerAddress();
+        return $this->getCustomerAddress() ?: new CustomerAddress();
     }
 
     /**
@@ -532,8 +532,9 @@ class MindeeFinancialDocument1DocPrediction implements ModelInterface, ArrayAcce
         return $this->container['customer_name'];
     }
 
-    public function customerName():CustomerName{
-        return $this->container['customer_name']?: new CustomerName();
+    public function customerName(): CustomerName
+    {
+        return $this->container['customer_name'] ?: new CustomerName();
     }
 
     /**
@@ -1102,7 +1103,7 @@ class MindeeFinancialDocument1DocPrediction implements ModelInterface, ArrayAcce
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -1128,5 +1129,3 @@ class MindeeFinancialDocument1DocPrediction implements ModelInterface, ArrayAcce
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -41,7 +41,6 @@ use PHPUnit\Framework\TestCase;
  */
 class MindeeFinancialDocument1PagePredictionTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */

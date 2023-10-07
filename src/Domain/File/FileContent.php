@@ -4,12 +4,13 @@ namespace Laudeco\Mindee\Domain\File;
 
 final class FileContent implements FileInterface
 {
-
     private function __construct(
         private string $content
-    ){}
+    ) {
+    }
 
-    public static function fromContent(string $content):self{
+    public static function fromContent(string $content): self
+    {
         return new self($content);
     }
 

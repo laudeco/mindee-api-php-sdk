@@ -11,7 +11,6 @@ use OpenAPI\Client\Model\SuccessPredictResponseDocumentInference;
 
 final class FinancialDocumentClient extends AbstractMindeeClient
 {
-
     protected function version(): string
     {
         return 'v1';

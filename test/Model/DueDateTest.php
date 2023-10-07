@@ -41,7 +41,6 @@ use PHPUnit\Framework\TestCase;
  */
 class DueDateTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
