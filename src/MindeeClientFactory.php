@@ -12,7 +12,7 @@ use Laudeco\Mindee\Domain\Authentication\AuthenticationInterface;
 final class MindeeClientFactory
 {
 
-    public static function financialDocument(AuthenticationInterface $authentication): MindeeClientInterface
+    public static function financialDocument(AuthenticationInterface $authentication): FinancialDocumentClient
     {
         return new FinancialDocumentClient($authentication);
     }
