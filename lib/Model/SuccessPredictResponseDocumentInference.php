@@ -28,8 +28,8 @@
 
 namespace OpenAPI\Client\Model;
 
-use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use ArrayAccess;
+use OpenAPI\Client\ObjectSerializer;
 
 /**
  * SuccessPredictResponseDocumentInference Class Doc Comment
@@ -90,12 +90,12 @@ class SuccessPredictResponseDocumentInference implements ModelInterface, ArrayAc
       */
     protected static array $openAPINullables = [
         'extras' => false,
-		'finished_at' => false,
-		'pages' => false,
-		'prediction' => false,
-		'processing_time' => false,
-		'product' => false,
-		'started_at' => false
+        'finished_at' => false,
+        'pages' => false,
+        'prediction' => false,
+        'processing_time' => false,
+        'product' => false,
+        'started_at' => false
     ];
 
     /**
@@ -422,8 +422,9 @@ class SuccessPredictResponseDocumentInference implements ModelInterface, ArrayAc
         return $this->container['prediction'];
     }
 
-    public function prediction():MindeeFinancialDocument1DocPrediction{
-        return $this->container['prediction']?: new MindeeFinancialDocument1DocPrediction();
+    public function prediction(): MindeeFinancialDocument1DocPrediction
+    {
+        return $this->container['prediction'] ?: new MindeeFinancialDocument1DocPrediction();
     }
 
     /**
@@ -587,7 +588,7 @@ class SuccessPredictResponseDocumentInference implements ModelInterface, ArrayAc
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -613,5 +614,3 @@ class SuccessPredictResponseDocumentInference implements ModelInterface, ArrayAc
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

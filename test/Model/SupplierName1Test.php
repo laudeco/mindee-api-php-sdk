@@ -41,7 +41,6 @@ use PHPUnit\Framework\TestCase;
  */
 class SupplierName1Test extends TestCase
 {
-
     /**
      * Setup before running any test case
      */

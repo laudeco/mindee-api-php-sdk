@@ -41,7 +41,6 @@ use PHPUnit\Framework\TestCase;
  */
 class TotalTaxTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */

@@ -28,8 +28,8 @@
 
 namespace OpenAPI\Client\Model;
 
-use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use ArrayAccess;
+use OpenAPI\Client\ObjectSerializer;
 
 /**
  * TotalAmountIncludingTaxesTipsFeesAndOtherCharges1 Class Doc Comment
@@ -82,8 +82,8 @@ class TotalAmountIncludingTaxesTipsFeesAndOtherCharges1 implements ModelInterfac
       */
     protected static array $openAPINullables = [
         'confidence' => false,
-		'polygon' => false,
-		'value' => false
+        'polygon' => false,
+        'value' => false
     ];
 
     /**
@@ -463,7 +463,7 @@ class TotalAmountIncludingTaxesTipsFeesAndOtherCharges1 implements ModelInterfac
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -489,5 +489,3 @@ class TotalAmountIncludingTaxesTipsFeesAndOtherCharges1 implements ModelInterfac
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -28,8 +28,8 @@
 
 namespace OpenAPI\Client\Model;
 
-use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use ArrayAccess;
+use OpenAPI\Client\ObjectSerializer;
 
 /**
  * SupplierPaymentDetailsInner1 Class Doc Comment
@@ -88,11 +88,11 @@ class SupplierPaymentDetailsInner1 implements ModelInterface, ArrayAccess, \Json
       */
     protected static array $openAPINullables = [
         'account_number' => false,
-		'confidence' => false,
-		'iban' => false,
-		'polygon' => false,
-		'routing_number' => false,
-		'swift' => false
+        'confidence' => false,
+        'iban' => false,
+        'polygon' => false,
+        'routing_number' => false,
+        'swift' => false
     ];
 
     /**
@@ -565,7 +565,7 @@ class SupplierPaymentDetailsInner1 implements ModelInterface, ArrayAccess, \Json
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -591,5 +591,3 @@ class SupplierPaymentDetailsInner1 implements ModelInterface, ArrayAccess, \Json
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

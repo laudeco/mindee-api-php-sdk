@@ -28,8 +28,8 @@
 
 namespace OpenAPI\Client\Model;
 
-use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use ArrayAccess;
+use OpenAPI\Client\ObjectSerializer;
 
 /**
  * TotalNetOfTaxesFeesAndDiscount Class Doc Comment
@@ -84,9 +84,9 @@ class TotalNetOfTaxesFeesAndDiscount implements ModelInterface, ArrayAccess, \Js
       */
     protected static array $openAPINullables = [
         'confidence' => false,
-		'page_id' => false,
-		'polygon' => false,
-		'value' => false
+        'page_id' => false,
+        'polygon' => false,
+        'value' => false
     ];
 
     /**
@@ -497,7 +497,7 @@ class TotalNetOfTaxesFeesAndDiscount implements ModelInterface, ArrayAccess, \Js
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -523,5 +523,3 @@ class TotalNetOfTaxesFeesAndDiscount implements ModelInterface, ArrayAccess, \Js
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-
