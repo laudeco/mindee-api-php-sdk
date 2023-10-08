@@ -18,6 +18,9 @@ final class SupplierPaymentDetailCollection implements \Countable, \IteratorAggr
         return new self(array_merge($this->collection, [$item]));
     }
 
+    /**
+     * @return \ArrayIterator| SupplierPaymentDetail[]
+     */
     public function getIterator()
     {
         return new \ArrayIterator($this->collection);

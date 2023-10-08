@@ -8,14 +8,14 @@ final class Supplier
         private string $name,
         private string $address,
         private string $phoneNumber,
-        private string $vatNumber,
-        private SupplierPaymentDetailCollection $paymentDetailCollection
+        private SupplierPaymentDetailCollection $paymentDetailCollection,
+        private CompanyInformationCollection $companyInformationCollection
     ) {
     }
 
-    public static function create(string $name, string $address, string $phoneNumber, string $vatNumber): self
+    public static function create(string $name, string $address, string $phoneNumber): self
     {
-        return new self($name, $address, $phoneNumber, $vatNumber, SupplierPaymentDetailCollection::create());
+        return new self($name, $address, $phoneNumber, SupplierPaymentDetailCollection::create(), CompanyInformationCollection::create());
     }
 
     public function getName(): string
@@ -33,15 +33,41 @@ final class Supplier
         return $this->phoneNumber;
     }
 
-    public function getVatNumber(): string
-    {
-        return $this->vatNumber;
-    }
-
     public function getPaymentDetailCollection(): SupplierPaymentDetailCollection
     {
         return $this->paymentDetailCollection;
     }
 
+    public function getCompanyInformationCollection(): CompanyInformationCollection
+    {
+        return $this->companyInformationCollection;
+    }
+
+    public function addPaymentDetail(SupplierPaymentDetail $supplierPaymentDetail): self
+    {
+        return new self(
+            $this->name,
+            $this->address,
+            $this->phoneNumber,
+            $this->paymentDetailCollection->add($supplierPaymentDetail),
+            $this->companyInformationCollection
+        );
+    }
+
+    public function addCompanyInformation(CompanyInformation $companyInformation): self
+    {
+        return new self(
+            $this->name,
+            $this->address,
+            $this->phoneNumber,
+            $this->paymentDetailCollection,
+            $this->companyInformationCollection->add($companyInformation)
+        );
+    }
+
+    public function getVatNumber(): string
+    {
+        return $this->companyInformationCollection->getVatNumber();
+    }
 
 }

@@ -7,7 +7,7 @@ use Laudeco\Mindee\MindeeClientFactory;
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $token = ''; // API Token
-$file = ''; //TODO change by a file
+$file = __DIR__.''; //TODO change by a file
 
 $client = MindeeClientFactory::financialDocument(new Token($token));
 
@@ -17,9 +17,11 @@ try {
 
     echo "Supplier : " . $result->supplier()->getName() . "\n";
     echo "Supplier Address: " . $result->supplier()->getAddress() . "\n";
+    echo "Supplier VAT: " . $result->supplier()->getVatNumber() . "\n";
     echo "\n---------------------------------------------------------------------- \n";
     echo "Customer: " . $result->customer()->getName() . "\n";
     echo "Customer Address: " . $result->customer()->getAddress() . "\n";
+    echo "Customer VAT: " . $result->customer()->getVatNumber() . "\n";
     echo "\n---------------------------------------------------------------------- \n";
     echo "Date: " . $result->date()?->format('d-m-Y') . "\n";
     echo "Date due: " . $result->dueDate()?->format('d-m-Y') . "\n";
@@ -31,6 +33,11 @@ try {
     echo "\n---------------------------------------------------------------------- \n";
     echo "Total: " . $result->totalGross() . "\n";
     echo "Total net: " . $result->totalNet() . "\n";
+
+    echo "\n---------------------------------------------------------------------- \n";
+    foreach($result->supplier()->getPaymentDetailCollection() as $paymentDetail) {
+        echo "| {$paymentDetail->getIban()}\t | {$paymentDetail->getBic()}\t | {$paymentDetail->getAccountNumber()}\t | {$paymentDetail->getRoutingNumber()}\t | \n";
+    }
 
 
 } catch (Exception $e) {
