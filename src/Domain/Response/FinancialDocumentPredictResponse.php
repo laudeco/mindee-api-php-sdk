@@ -2,10 +2,12 @@
 
 namespace Laudeco\Mindee\Domain\Response;
 
+use Laudeco\Mindee\Domain\CompanyInformation;
 use Laudeco\Mindee\Domain\Customer;
 use Laudeco\Mindee\Domain\InvoiceLine;
 use Laudeco\Mindee\Domain\InvoiceLineCollection;
 use Laudeco\Mindee\Domain\Supplier;
+use Laudeco\Mindee\Domain\SupplierPaymentDetail;
 use OpenAPI\Client\Model\LineItemsInner;
 use OpenAPI\Client\Model\MindeeFinancialDocument1DocPrediction;
 use OpenAPI\Client\Model\SuccessPredictResponseDocumentInference;
@@ -29,18 +31,46 @@ final class FinancialDocumentPredictResponse implements FinancialDocumentRespons
 
     public static function fromPrediction(MindeeFinancialDocument1DocPrediction $prediction)
     {
+        $customer = Customer::create(
+            $prediction->getCustomerName()?->getValue() ?: '',
+            $prediction->getCustomerAddress()?->getValue() ?: ''
+        );
+        foreach(($prediction->getCustomerCompanyRegistrations() ?: []) as $customerInformation) {
+            $customer = $customer->addCompanyInformation(
+                CompanyInformation::create(
+                    $customerInformation->getType() ?: '',
+                    $customerInformation->getValue() ?: ''
+                )
+            );
+        }
+
+        $supplier = Supplier::create(
+            $prediction->getSupplierName()?->getValue(),
+            $prediction->getSupplierAddress()?->getValue(),
+            ''
+        );
+        foreach(($prediction->getSupplierCompanyRegistrations() ?: []) as $supplierInformation) {
+            $supplier = $supplier->addCompanyInformation(
+                CompanyInformation::create(
+                    $supplierInformation->getType() ?: '',
+                    $supplierInformation->getValue() ?: ''
+                )
+            );
+        }
+        foreach ($prediction->getSupplierPaymentDetails() ?: [] as $paymentDetail) {
+            $supplier = $supplier->addPaymentDetail(
+                SupplierPaymentDetail::create(
+                    $paymentDetail->getIban() ?: '',
+                    $paymentDetail->getSwift() ?: '',
+                    $paymentDetail->getAccountNumber() ?: '',
+                    $paymentDetail->getRoutingNumber() ?: ''
+                )
+            );
+        }
+
         return new self(
-            Customer::create(
-                $prediction->getCustomerName()?->getValue() ?: '',
-                $prediction->getCustomerAddress()?->getValue() ?: '',
-                '' // TODO
-            ),
-            Supplier::create(
-                $prediction->getSupplierName()?->getValue(),
-                $prediction->getSupplierAddress()?->getValue(),
-                '',
-                '' // TODO
-            ),
+            $customer,
+            $supplier,
             InvoiceLineCollection::create()->addAll(array_map(fn (LineItemsInner $item) => InvoiceLine::create(
                 $item->getProductCode() ?: '',
                 $item->getDescription() ?: '',

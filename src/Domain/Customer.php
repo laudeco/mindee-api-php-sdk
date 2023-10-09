@@ -7,13 +7,13 @@ final class Customer
     private function __construct(
         private string $name,
         private string $address,
-        private string $vatNumber
+        private CompanyInformationCollection $companyInformationCollection
     ) {
     }
 
-    public static function create(string $name, string $address, string $vatNumber): self
+    public static function create(string $name, string $address): self
     {
-        return new self($name, $address, $vatNumber);
+        return new self($name, $address, CompanyInformationCollection::create());
     }
 
     public function getName(): string
@@ -26,12 +26,22 @@ final class Customer
         return $this->address;
     }
 
-    public function getVatNumber(): string
+    public function getCompanyInformationCollection(): CompanyInformationCollection
     {
-        return $this->vatNumber;
+        return $this->companyInformationCollection;
     }
 
+    public function addCompanyInformation(CompanyInformation $companyInformation): self
+    {
+        return new self(
+            $this->name,
+            $this->address,
+            $this->companyInformationCollection->add($companyInformation)
+        );
+    }
 
-
-
+    public function getVatNumber(): string
+    {
+        return $this->companyInformationCollection->getVatNumber();
+    }
 }
